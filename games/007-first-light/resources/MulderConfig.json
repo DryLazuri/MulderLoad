@@ -9,7 +9,7 @@
       "type": "radioGroup",
       "radios": [
         { "value": "16/9 (no fix)" },
-        { "value": "21/9 (2560x1080)" },
+        { "value": "21/9 (2560x1080 or 5120x2160)" },
         { "value": "21/9 (3440x1440)" },
         { "value": "21/9 (3840x1600)" },
         { "value": "32/9" }
@@ -52,19 +52,19 @@
         "operation": "patchBytes",
         "files": ["Retail\\007FirstLight.exe"],
         "patches": [
-            { "offset": "0xCDE236", "bytes": "39 8E E3 3F" },
-            { "offset": "0xD7DCD6", "bytes": "39 8E E3 3F" },
-            { "offset": "0x2F3C2E0", "bytes": "39 8E E3 3F" }
+            { "offset": "0xCE0356", "bytes": "39 8E E3 3F" },
+            { "offset": "0xD80796", "bytes": "39 8E E3 3F" },
+            { "offset": "0x2F43070", "bytes": "39 8E E3 3F" }
         ]
       },
       {
-        "when": [ { "Ultrawide Cutscenes Fix": "21/9 (2560x1080)" } ],
+        "when": [ { "Ultrawide Cutscenes Fix": "21/9 (2560x1080 or 5120x2160)" } ],
         "operation": "patchBytes",
         "files": ["Retail\\007FirstLight.exe"],
         "patches": [
-            { "offset": "0xCDE236", "bytes": "26 B4 17 40" },
-            { "offset": "0xD7DCD6", "bytes": "26 B4 17 40" },
-            { "offset": "0x2F3C2E0", "bytes": "26 B4 17 40" }
+            { "offset": "0xCE0356", "bytes": "26 B4 17 40" },
+            { "offset": "0xD80796", "bytes": "26 B4 17 40" },
+            { "offset": "0x2F43070", "bytes": "26 B4 17 40" }
         ]
       },
       {
@@ -72,9 +72,9 @@
         "operation": "patchBytes",
         "files": ["Retail\\007FirstLight.exe"],
         "patches": [
-            { "offset": "0xCDE236", "bytes": "8E E3 18 40" },
-            { "offset": "0xD7DCD6", "bytes": "8E E3 18 40" },
-            { "offset": "0x2F3C2E0", "bytes": "8E E3 18 40" }
+            { "offset": "0xCE0356", "bytes": "8E E3 18 40" },
+            { "offset": "0xD80796", "bytes": "8E E3 18 40" },
+            { "offset": "0x2F43070", "bytes": "8E E3 18 40" }
         ]
       },
       {
@@ -82,9 +82,9 @@
         "operation": "patchBytes",
         "files": ["Retail\\007FirstLight.exe"],
         "patches": [
-            { "offset": "0xCDE236", "bytes": "9A 99 19 40" },
-            { "offset": "0xD7DCD6", "bytes": "9A 99 19 40" },
-            { "offset": "0x2F3C2E0", "bytes": "9A 99 19 40" }
+            { "offset": "0xCE0356", "bytes": "9A 99 19 40" },
+            { "offset": "0xD80796", "bytes": "9A 99 19 40" },
+            { "offset": "0x2F43070", "bytes": "9A 99 19 40" }
         ]
       },
       {
@@ -92,9 +92,9 @@
         "operation": "patchBytes",
         "files": ["Retail\\007FirstLight.exe"],
         "patches": [
-            { "offset": "0xCDE236", "bytes": "39 8E 63 40" },
-            { "offset": "0xD7DCD6", "bytes": "39 8E 63 40" },
-            { "offset": "0x2F3C2E0", "bytes": "39 8E 63 40" }
+            { "offset": "0xCE0356", "bytes": "39 8E 63 40" },
+            { "offset": "0xD80796", "bytes": "39 8E 63 40" },
+            { "offset": "0x2F43070", "bytes": "39 8E 63 40" }
         ]
       },
 
