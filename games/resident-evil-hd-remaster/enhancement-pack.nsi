@@ -28,18 +28,13 @@ Section "Fusion Fix (by ThirteenAG) + True 4K (by Arcturium)"
 
     # Fusion Fix
     !insertmacro DOWNLOAD_2 "https://github.com/ThirteenAG/WidescreenFixesPack/releases/download/re1/ResidentEvil.FusionFix.zip" \
-                            "https://cdn.mulderload.eu/games/resident-evil-hd-remaster/impr_misc/ResidentEvil.FusionFix.zip" \
+                            "https://cdn.mulderload.eu/games/resident-evil-hd-remaster/impr_misc/ResidentEvil.FusionFix-v260928.zip" \
                             "ResidentEvil.FusionFix.zip" \
-                            "d0073d31f482b1dbae1abdeeb37bf41d745ad316"
+                            "6610e5ae9a1b242dc4c19dd46d97dfd0464a7f04eebac6c0026a967a6b0218e1"
 
     !insertmacro NSISUNZ_EXTRACT "ResidentEvil.FusionFix.zip" ".\" "AUTO_DELETE"
     !insertmacro FILE_STR_REPLACE "BorderlessWindowed = 1" "BorderlessWindowed = 0" 1 1 "$INSTDIR\scripts\ResidentEvil.FusionFix.ini"
-    AddSize 1093
-
-    # Update dinput8.dll with latest Ultimate ASI Loader
-    !insertmacro DOWNLOAD_1 "https://github.com/ThirteenAG/Ultimate-ASI-Loader/releases/download/Win32-latest/dinput8-Win32.zip" "dinput8-Win32.zip" ""
-    !insertmacro NSISUNZ_EXTRACT_ONE "dinput8-Win32.zip" ".\" "dinput8.dll" "AUTO_DELETE"
-    AddSize 5272
+    AddSize 9268
 
     # True 4K
     ${IfNot} ${FileExists} "$INSTDIR\nativePC\arc\_ingamecommon.ori"
@@ -150,26 +145,6 @@ SectionGroup /e "Graphical improvements"
         #AddSize -1260602
     SectionEnd
 
-    Section "dgVoodoo2 (by Dege)"
-        AddSize 931
-        SetOutPath "$INSTDIR\@mulderload\dgVoodoo2"
-
-        # Install dgVoodoo2
-        !insertmacro DOWNLOAD_DGVOODOO2
-        !insertmacro NSISUNZ_EXTRACT_ONE "dgVoodoo2.zip" ".\" "dgVoodoo.conf" ""
-        !insertmacro NSISUNZ_EXTRACT_ONE "dgVoodoo2.zip" ".\" "dgVoodooCpl.exe" ""
-        !insertmacro NSISUNZ_EXTRACT_ONE "dgVoodoo2.zip" ".\" "MS\x86\D3D9.dll" "AUTO_DELETE"
-        AddSize 931
-        !insertmacro FORCE_RENAME "D3D9.dll" "_dgVoodoo2.dll"
-
-        SetOutPath "$INSTDIR"
-        !insertmacro FOLDER_MERGE "$INSTDIR\@mulderload\dgVoodoo2" "$INSTDIR"
-
-        # Configure dgVoodoo2
-        !insertmacro FILE_STR_REPLACE "VRAM                                = 256" "VRAM                                = 2048" 1 1 "$INSTDIR\dgVoodoo.conf"
-        !insertmacro FILE_STR_REPLACE "dgVoodooWatermark                   = true" "dgVoodooWatermark                   = false" 1 1 "$INSTDIR\dgVoodoo.conf"
-    SectionEnd
-
     Section "East stairs lightning fix (by Kayael or nayef)"
         SetOutPath "$INSTDIR"
 
@@ -211,6 +186,20 @@ SectionGroup /e "Graphical improvements"
 SectionGroupEnd
 
 SectionGroup /e "Other improvements"
+    Section "DualShock 4 Icons (by vectorunit0)"
+        SetOutPath "$INSTDIR\.MulderConfig\DS4Icons"
+
+        ${IfNot} ${FileExists} "$INSTDIR\.MulderConfig\Backup\nativePC\arcPC\id\e_rom\common.arc"
+            CopyFiles /SILENT "nativePC\arcPC\id\e_rom\common.arc" "$INSTDIR\.MulderConfig\Backup\nativePC\arcPC\id\e_rom\common.arc"
+        ${EndIf}
+
+        !insertmacro DOWNLOAD_1 "https://cdn.mulderload.eu/games/resident-evil-hd-remaster/impr_controller/RERemButtonsDS4.rar" \
+                                "RERemButtonsDS4.rar" \
+                                "4bf88fd2747a898e94c9581335b891ae3920cdb7"
+
+        !insertmacro 7Z_EXTRACT "RERemButtonsDS4.rar" ".\" "AUTO_DELETE"
+    SectionEnd
+
     Section "Gamecube Font Mod (by MrBunny)"
         SetOutPath "$INSTDIR"
 
@@ -279,6 +268,7 @@ SectionEnd
 
 Section
     !insertmacro 7Z_REMOVE
+    RMDir /r "$INSTDIR\@mulderload"
 SectionEnd
 
 Function .onInit

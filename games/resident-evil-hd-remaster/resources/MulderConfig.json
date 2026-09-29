@@ -5,30 +5,12 @@
   },
   "optionGroups": [
     {
-      "name": "API",
-      "type": "radioGroup",
-      "radios": [
-        { "value": "Direct3D 9 (original)" },
-        { "value": "Direct3D 11 (dgVoodoo2)" }
-      ]
-    },
-    {
       "name": "Graphical improvements",
       "type": "checkboxGroup",
       "checkboxes": [
         { "value": "4K rendering for 3D assets" },
         { "value": "Real time graphics mod" },
         { "value": "Remove 120fps cap in \"Variable frame rate\"" }
-      ]
-    },
-    {
-      "name": "Graphical improvements / MSAA Anti-Aliasing",
-      "type": "radioGroup",
-      "radios": [
-        { "value": "Off" },
-        { "value": "2x", "disabledWhen": [ { "!*API": "dgVoodoo2" }, { "Misc": "Performance boost" } ] },
-        { "value": "4x", "disabledWhen": [ { "!*API": "dgVoodoo2" }, { "Misc": "Performance boost" } ] },
-        { "value": "8x", "disabledWhen": [ { "!*API": "dgVoodoo2" }, { "Misc": "Performance boost" } ] }
       ]
     },
     {
@@ -45,33 +27,14 @@
       "name": "Misc",
       "type": "checkboxGroup",
       "checkboxes": [
-        { "value": "ERR09 Crash Fix", "disabledWhen": [ { "*API": "dgVoodoo2" } ] },
+        { "value": "DualShock 4 Icons" },
+        { "value": "ERR09 Crash Fix" },
         { "value": "Performance boost" }
       ]
     }
   ],
   "actions": {
     "operations": [
-      {
-        "when": [ ],
-        "operation": "delete",
-        "source": "d3d9.dll"
-      },
-      {
-        "when": [ { "!Graphical improvements": "Real time graphics mod", "*API": "dgVoodoo2" } ],
-        "operation": "copy",
-        "source": "_dgVoodoo2.dll",
-        "target": "d3d9.dll"
-      },
-      {
-        "when": [ { "!Graphical improvements": "Real time graphics mod", "Misc": "ERR09 Crash Fix" } ],
-        "operation": "copy",
-        "source": "_crashfix.dll",
-        "target": "d3d9.dll"
-      },
-
-
-
       {
         "when": [ { "Graphical improvements": "4K rendering for 3D assets" } ],
         "operation": "copy",
@@ -88,24 +51,28 @@
 
 
       {
+        "when": [ ],
+        "operation": "delete",
+        "source": "d3d9.dll"
+      },
+      {
         "when": [ { "Graphical improvements": "Real time graphics mod" } ],
         "operation": "copy",
         "source": "_realtimegraphics.dll",
         "target": "d3d9.dll"
       },
       {
-        "when": [ { "Graphical improvements": "Real time graphics mod" } ],
+        "when": [ { "!Graphical improvements": "Real time graphics mod", "Misc": "ERR09 Crash Fix" } ],
+        "operation": "copy",
+        "source": "_crashfix.dll",
+        "target": "d3d9.dll"
+      },
+      {
+        "when": [ ],
         "operation": "replaceLine",
         "files": ["DX9Settings.ini"],
         "pattern": "ProxyLib",
         "replacement": ";ProxyLib = "
-      },
-      {
-        "when": [ { "Graphical improvements": "Real time graphics mod", "*API": "dgVoodoo2" } ],
-        "operation": "replaceLine",
-        "files": ["DX9Settings.ini"],
-        "pattern": "ProxyLib",
-        "replacement": "ProxyLib = _dgVoodoo2.dll"
       },
       {
         "when": [ { "Graphical improvements": "Real time graphics mod", "Misc": "ERR09 Crash Fix" } ],
@@ -127,44 +94,6 @@
         "files": ["scripts\\ResidentEvil.FusionFix.ini"],
         "pattern": "UnlockFPS",
         "replacement": "UnlockFPS = 1"
-      },
-
-
-   
-      {
-        "when": [ { "Graphical improvements / MSAA Anti-Aliasing": "Off" } ],
-        "operation": "replaceLine",
-        "files": ["dgVoodoo.conf"],
-        "pattern": "^Antialiasing                        =.*$",
-        "replacement": "Antialiasing                        = appdriven"
-      },
-      {
-        "when": [ { "!Graphical improvements / MSAA Anti-Aliasing": "Off" } ],
-        "operation": "replaceLine",
-        "files": ["%LOCALAPPDATA%\\CAPCOM\\Resident Evil - biohazard@HD REMASTER\\config.ini"],
-        "pattern": "^AltAntiAlias.*$",
-        "replacement": "AltAntiAlias=NONE"
-      },
-      {
-        "when": [ { "Graphical improvements / MSAA Anti-Aliasing": "2x" } ],
-        "operation": "replaceLine",
-        "files": ["dgVoodoo.conf"],
-        "pattern": "^Antialiasing                        =.*$",
-        "replacement": "Antialiasing                        = 2x"
-      },
-      {
-        "when": [ { "Graphical improvements / MSAA Anti-Aliasing": "4x" } ],
-        "operation": "replaceLine",
-        "files": ["dgVoodoo.conf"],
-        "pattern": "^Antialiasing                        =.*$",
-        "replacement": "Antialiasing                        = 4x"
-      },
-      {
-        "when": [ { "Graphical improvements / MSAA Anti-Aliasing": "8x" } ],
-        "operation": "replaceLine",
-        "files": ["dgVoodoo.conf"],
-        "pattern": "^Antialiasing                        =.*$",
-        "replacement": "Antialiasing                        = 8x"
       },
 
 
@@ -246,6 +175,18 @@
 
 
 
+      {
+        "when": [ { "Misc": "DualShock 4 Icons" } ],
+        "operation": "copy",
+        "source": ".MulderConfig\\DS4Icons\\nativePC\\arcPC\\id\\e_rom\\common.arc",
+        "target": "nativePC\\arcPC\\id\\e_rom\\common.arc"
+      },
+      {
+        "when": [ { "!Misc": "DualShock 4 Icons" } ],
+        "operation": "copy",
+        "source": ".MulderConfig\\Backup\\nativePC\\arcPC\\id\\e_rom\\common.arc",
+        "target": "nativePC\\arcPC\\id\\e_rom\\common.arc"
+      },
       {
         "when": [ { "!Misc": "Performance boost" } ],
         "operation": "replaceLine",
