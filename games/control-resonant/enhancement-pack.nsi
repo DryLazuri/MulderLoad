@@ -24,29 +24,30 @@ SectionGroup "Required dependencies"
 
         !insertmacro NSISUNZ_EXTRACT "CONTROL_Resonant_loader 1.0.0 9 1.0.0 2026-09-24T19-19Z SEDl9mA5X.zip" ".\" "AUTO_DELETE"
         AddSize 56
+        !insertmacro FORCE_RENAME "winmm.dll" "winmmHooked.dll"
     SectionEnd
 
-    Section "Mod Settings Menu v1.3.0 (by kkyleeb21)"
+    Section "Mod Settings Menu v1.4.0 (by kkyleeb21)"
         SetOutPath "$INSTDIR"
 
-        !insertmacro DOWNLOAD_1 "https://www.nexusmods.com/controlresonant/mods/35?tab=files&file_id=147" \
-                                "ModMenu 1.3.0 35 1.3.0 2026-09-28T04-12Z UXsQ3kaaj.zip" \
-                                "751b9c00c656cb0a13068d77f07f7172672de7a5"
+        !insertmacro DOWNLOAD_1 "https://www.nexusmods.com/controlresonant/mods/35?tab=files&file_id=197" \
+                                "ModMenu 1.4.0 35 1.4.0 2026-09-29T05-08Z Lb8AWKtyP.zip" \
+                                "831d17f3f559f5071a3f6ddddddb6edab094a480"
 
-        !insertmacro NSISUNZ_EXTRACT "ModMenu 1.3.0 35 1.3.0 2026-09-28T04-12Z UXsQ3kaaj.zip" ".\" "AUTO_DELETE"
+        !insertmacro NSISUNZ_EXTRACT "ModMenu 1.4.0 35 1.4.0 2026-09-29T05-08Z Lb8AWKtyP.zip" ".\" "AUTO_DELETE"
         AddSize 779
     SectionEnd
 
     Section "Ultimate ASI Loader v9.7.4 (by ThirteenAG)"
         SetOutPath "$INSTDIR"
 
-        !insertmacro DOWNLOAD_2 "https://github.com/ThirteenAG/Ultimate-ASI-Loader/releases/download/v9.7.4/Ultimate-ASI-Loader.zip" \
-                                "https://cdn.mulderload.eu/tools/ultimate-asi-loader/Ultimate-ASI-Loader-v9.7.4.zip" \
+        !insertmacro DOWNLOAD_2 "https://github.com/ThirteenAG/Ultimate-ASI-Loader/releases/download/v9.7.4/Ultimate-ASI-Loader_x64.zip" \
+                                "https://cdn.mulderload.eu/tools/ultimate-asi-loader/Ultimate-ASI-Loader-v9.7.4_x64.zip" \
                                 "Ultimate-ASI-Loader.zip" \
-                                "952cebfc30d525afc2bdbaca954329d405ded3aa688a83027354dae14dfd5c5f"
+                                "8272d83b2692662098746f2d0ad0e2d85f3c8358ab1d63f75fbe835c2c8135fd"
 
         !insertmacro NSISUNZ_EXTRACT "Ultimate-ASI-Loader.zip" ".\" "AUTO_DELETE"
-        !insertmacro FORCE_RENAME "dinput8.dll" "version.dll"
+        !insertmacro FORCE_RENAME "dinput8.dll" "winmm.dll"
         AddSize 5292
     SectionEnd
 SectionGroupEnd
