@@ -2,7 +2,6 @@
 This is an Enhancement Pack for CONTROL Resonant, which includes some graphics enhancements and quality of life mods, while keeping a vanilla experience. It includes:$\r$\n\
 - Dynamic HUD (by SLEEP)$\r$\n\
 - Head Size Slider v0.5 (by alexanderhawkins)$\r$\n\
-- MapFusion v1.2.2 (by kkyleeb21) for enhancing map functionality$\r$\n\
 - NoIntro Fix v0.2 (by Gametism)$\r$\n\
 - PhotoMode (by kkyleeb21)$\r$\n\
 - Ultrawide Fix v1.3.0 (by SLEEP)$\r$\n\
@@ -27,15 +26,15 @@ SectionGroup "Required dependencies"
         !insertmacro FORCE_RENAME "winmm.dll" "winmmHooked.dll"
     SectionEnd
 
-    Section "Mod Settings Menu v1.4.0 (by kkyleeb21)"
+    Section "Mod Settings Menu v1.6.2 (by kkyleeb21)"
         SetOutPath "$INSTDIR"
 
-        !insertmacro DOWNLOAD_1 "https://www.nexusmods.com/controlresonant/mods/35?tab=files&file_id=197" \
-                                "ModMenu 1.4.0 35 1.4.0 2026-09-29T05-08Z Lb8AWKtyP.zip" \
-                                "831d17f3f559f5071a3f6ddddddb6edab094a480"
+        !insertmacro DOWNLOAD_1 "https://www.nexusmods.com/controlresonant/mods/35?tab=files&file_id=311" \
+                                "ModMenu 1.6.2 35 1.6.2 2026-10-01T08-49Z ofuzpD6Vb.zip" \
+                                "b32e7df1dc06c3d5f74cd759bf6224f6511c838b"
 
-        !insertmacro NSISUNZ_EXTRACT "ModMenu 1.4.0 35 1.4.0 2026-09-29T05-08Z Lb8AWKtyP.zip" ".\" "AUTO_DELETE"
-        AddSize 779
+        !insertmacro NSISUNZ_EXTRACT "ModMenu 1.6.2 35 1.6.2 2026-10-01T08-49Z ofuzpD6Vb.zip" ".\" "AUTO_DELETE"
+        AddSize 903
     SectionEnd
 
     Section "Ultimate ASI Loader v9.7.4 (by ThirteenAG)"
@@ -53,73 +52,70 @@ SectionGroup "Required dependencies"
 SectionGroupEnd
 
 SectionGroup /e "Graphics Enhancements"
-    Section "Head Size Slider v0.5 (by alexanderhawkins)"
+    Section "Head Size Slider v0.6 (by alexanderhawkins)"
         SetOutPath "$INSTDIR"
 
-        !insertmacro DOWNLOAD_1 "https://www.nexusmods.com/controlresonant/mods/47?tab=files&file_id=124" \
-                                "Head Size Slider V0.5 47 0.5 2026-09-27T15-10Z 8TbVJ6xxo.zip" \
-                                "d344d380e6514c0eea379c7d54dd13bb1670e94c"
+        !insertmacro DOWNLOAD_1 "https://www.nexusmods.com/controlresonant/mods/47?tab=files&file_id=330" \
+                                "Head Size Slider V0.6 for update 1.4 47 0.6 2026-10-01T12-05Z yuomjSKAd.zip" \
+                                "879b9243c174ab12583bbd3fead7f410f31116b5"
 
-        !insertmacro NSISUNZ_EXTRACT "Head Size Slider V0.5 47 0.5 2026-09-27T15-10Z 8TbVJ6xxo.zip" ".\" "AUTO_DELETE"
+        !insertmacro NSISUNZ_EXTRACT "Head Size Slider V0.6 for update 1.4 47 0.6 2026-10-01T12-05Z yuomjSKAd.zip" ".\" "AUTO_DELETE"
         AddSize 3063
     SectionEnd
 
-    Section /o "Ultrawide Fix v1.3.0 (by SLEEP)"
-        SetOutPath "$INSTDIR\scripts"
-
-        !insertmacro DOWNLOAD_1 "https://www.nexusmods.com/controlresonant/mods/11?tab=files&file_id=55" \
-                                "UltrawideFix 1.3.0 11 1.3.0 2026-09-26T09-53Z pZRs05yt7.zip" \
-                                "14d2632a3ac6770ae04ae35699e9ea731be32ecd"
-
-        !insertmacro NSISUNZ_EXTRACT "UltrawideFix 1.3.0 11 1.3.0 2026-09-26T09-53Z pZRs05yt7.zip" ".\" "AUTO_DELETE"
-        AddSize 213
-    SectionEnd
-SectionGroupEnd
-
-SectionGroup /e "Quality of Life"
-    Section "MapFusion v1.2.2 (by kkyleeb21)"
+    Section /o "Ultrawide Fix v1.3.2 (by SLEEP)"
         SetOutPath "$INSTDIR"
 
-        !insertmacro DOWNLOAD_1 "https://www.nexusmods.com/controlresonant/mods/37?tab=files&file_id=156" \
-                                "MapFusion 1.2.2 37 1.2.2 2026-09-28T09-46Z pZRs05yrQ.zip" \
-                                "0a5f6de3373d8c969624520dd9902580e2410392"
+        !insertmacro DOWNLOAD_1 "https://www.nexusmods.com/controlresonant/mods/11?tab=files&file_id=322" \
+                                "UltrawideFix - F2G DLL Mod Loader 11 1.3.2 2026-10-01T11-03Z Kn6R1ACvY.zip" \
+                                "1c543f5e354e640c2f5e77976aac1dfdac82f00f"
 
-        !insertmacro NSISUNZ_EXTRACT "MapFusion 1.2.2 37 1.2.2 2026-09-28T09-46Z pZRs05yrQ.zip" ".\" "AUTO_DELETE"
-        AddSize 396
-    SectionEnd
-
-    Section /o "No-Intro v0.2 (by Gametism)"
-        SetOutPath "$INSTDIR\scripts"
-
-        !insertmacro DOWNLOAD_1 "https://www.nexusmods.com/controlresonant/mods/1?tab=files&file_id=26" \
-                                "CRNo-IntroFix-v.0.2 1 0.2 2026-09-25T13-11Z g4qMrXDls.zip" \
-                                "955dacee7c5476cb04c8b3bee8c6f7b2bb4424df"
-
-        !insertmacro NSISUNZ_EXTRACT_ONE "CRNo-IntroFix-v.0.2 1 0.2 2026-09-25T13-11Z g4qMrXDls.zip" ".\" "ControlResonantNoIntro.asi" "AUTO_DELETE"
-        AddSize 32
+        !insertmacro NSISUNZ_EXTRACT "UltrawideFix - F2G DLL Mod Loader 11 1.3.2 2026-10-01T11-03Z Kn6R1ACvY.zip" ".\" "AUTO_DELETE"
+        AddSize 214
     SectionEnd
 SectionGroupEnd
 
-Section "Dynamic HUD v1.1.3 (by SLEEP)"
+Section "Dynamic HUD v1.4.1 (by SLEEP)"
     SetOutPath "$INSTDIR"
 
-    !insertmacro DOWNLOAD_1 "https://www.nexusmods.com/controlresonant/mods/28?tab=files&file_id=161" \
-                            "Dynamic HUD - F2G 28 1.3.0 2026-09-28T11-59Z 259wehq3F.zip" \
-                            "5057f269f020a3ed8644066ee442906094d99baa"
+    !insertmacro DOWNLOAD_1 "https://www.nexusmods.com/controlresonant/mods/28?tab=files&file_id=258" \
+                            "Dynamic HUD - F2G 28 1.4.1 2026-09-30T14-32Z SEDl9mA8n.zip" \
+                            "009027ae8c951988fcf00a0eee6603b2c0ee46c5"
 
-    !insertmacro NSISUNZ_EXTRACT "Dynamic HUD - F2G 28 1.3.0 2026-09-28T11-59Z 259wehq3F.zip" ".\" "AUTO_DELETE"
-    AddSize 321
+    !insertmacro NSISUNZ_EXTRACT "Dynamic HUD - F2G 28 1.4.1 2026-09-30T14-32Z SEDl9mA8n.zip" ".\" "AUTO_DELETE"
+    AddSize 354
 SectionEnd
 
-Section "PhotoMode v2.0.0 (by kkyleeb21)"
+Section
+    # Remove outdated MapFusion v1.2.2 of the previous Enhancement Pack
+    ${If} ${FileExists} "$INSTDIR\crmods\MapFusion\mapfusion.menu.json"
+        !insertmacro FILE_HASH_EQUALS "$INSTDIR\crmods\MapFusion\mapfusion.menu.json" "5445938ea054816f3b3278fac4ac8cdde91640df" $0
+        ${If} $0 == 1
+            RMDir /r "$INSTDIR\crmods\MapFusion"
+        ${EndIf}
+    ${EndIf}
+SectionEnd
+
+Section /o "No-Intro v0.2 (by Gametism)"
+    SetOutPath "$INSTDIR\scripts"
+
+    !insertmacro DOWNLOAD_1 "https://www.nexusmods.com/controlresonant/mods/1?tab=files&file_id=26" \
+                            "CRNo-IntroFix-v.0.2 1 0.2 2026-09-25T13-11Z g4qMrXDls.zip" \
+                            "955dacee7c5476cb04c8b3bee8c6f7b2bb4424df"
+
+    !insertmacro NSISUNZ_EXTRACT_ONE "CRNo-IntroFix-v.0.2 1 0.2 2026-09-25T13-11Z g4qMrXDls.zip" ".\" "ControlResonantNoIntro.asi" "AUTO_DELETE"
+    AddSize 32
+SectionEnd
+
+Section "PhotoMode v2.3.3 (by kkyleeb21)"
     SetOutPath "$INSTDIR"
 
-    !insertmacro DOWNLOAD_1 "https://www.nexusmods.com/controlresonant/mods/62?tab=files&file_id=157" \
-                            "PhotoMode 2.0.0 62 2.0.0 2026-09-28T09-57Z nCd1oWYET.zip" \
-                            "5cd30ad5e6a3c710152929e52bee21a74099ad44"
+    !insertmacro DOWNLOAD_1 "https://www.nexusmods.com/controlresonant/mods/62?tab=files&file_id=320" \
+                            "PhotoMode 2.3.3 62 2.3.3 2026-10-01T10-58Z SEDl9mARq.zip" \
+                            "cc08c5dbc7556216e9da941ac2cc891f21c712a0"
 
-    !insertmacro NSISUNZ_EXTRACT "PhotoMode 2.0.0 62 2.0.0 2026-09-28T09-57Z nCd1oWYET.zip" ".\" "AUTO_DELETE"
-    AddSize 1354
+    !insertmacro NSISUNZ_EXTRACT "PhotoMode 2.3.3 62 2.3.3 2026-10-01T10-58Z SEDl9mARq.zip" ".\" "AUTO_DELETE"
+    AddSize 1430
 SectionEnd
 
 ; Section "Better Camera - Zoom and FO (by PewCat)"
