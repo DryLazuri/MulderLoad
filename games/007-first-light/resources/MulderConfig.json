@@ -52,9 +52,9 @@
         "operation": "patchBytes",
         "files": ["Retail\\007FirstLight.exe"],
         "patches": [
-            { "offset": "0xDA44B6", "bytes": "39 8E E3 3F" },
-            { "offset": "0xE2D9D6", "bytes": "39 8E E3 3F" },
-            { "offset": "0x2FC4CA8", "bytes": "39 8E E3 3F" }
+            { "search": "00 C7 81 AC 00 00 00 ?? ?? ?? ?? 48 C7 81 B0 00", "expectedMatches": 1, "bytes": "39 8E E3 3F" },
+            { "search": "89 79 28 C7 41 2C ?? ?? ?? ?? 48 C7 41 30 FF FF", "expectedMatches": 1, "bytes": "39 8E E3 3F" },
+            { "search": "88 01 33 C3 BE E2 3F ?? ?? ?? ?? 0A D7 E3 3F 00", "expectedMatches": 1, "bytes": "39 8E E3 3F" }
         ]
       },
       {
@@ -62,9 +62,9 @@
         "operation": "patchBytes",
         "files": ["Retail\\007FirstLight.exe"],
         "patches": [
-            { "offset": "0xDA44B6", "bytes": "26 B4 17 40" },
-            { "offset": "0xE2D9D6", "bytes": "26 B4 17 40" },
-            { "offset": "0x2FC4CA8", "bytes": "26 B4 17 40" }
+            { "search": "00 C7 81 AC 00 00 00 ?? ?? ?? ?? 48 C7 81 B0 00", "expectedMatches": 1, "bytes": "26 B4 17 40" },
+            { "search": "89 79 28 C7 41 2C ?? ?? ?? ?? 48 C7 41 30 FF FF", "expectedMatches": 1, "bytes": "26 B4 17 40" },
+            { "search": "88 01 33 C3 BE E2 3F ?? ?? ?? ?? 0A D7 E3 3F 00", "expectedMatches": 1, "bytes": "26 B4 17 40" }
         ]
       },
       {
@@ -72,9 +72,9 @@
         "operation": "patchBytes",
         "files": ["Retail\\007FirstLight.exe"],
         "patches": [
-            { "offset": "0xDA44B6", "bytes": "8E E3 18 40" },
-            { "offset": "0xE2D9D6", "bytes": "8E E3 18 40" },
-            { "offset": "0x2FC4CA8", "bytes": "8E E3 18 40" }
+            { "search": "00 C7 81 AC 00 00 00 ?? ?? ?? ?? 48 C7 81 B0 00", "expectedMatches": 1, "bytes": "8E E3 18 40" },
+            { "search": "89 79 28 C7 41 2C ?? ?? ?? ?? 48 C7 41 30 FF FF", "expectedMatches": 1, "bytes": "8E E3 18 40" },
+            { "search": "88 01 33 C3 BE E2 3F ?? ?? ?? ?? 0A D7 E3 3F 00", "expectedMatches": 1, "bytes": "8E E3 18 40" }
         ]
       },
       {
@@ -82,9 +82,9 @@
         "operation": "patchBytes",
         "files": ["Retail\\007FirstLight.exe"],
         "patches": [
-            { "offset": "0xDA44B6", "bytes": "9A 99 19 40" },
-            { "offset": "0xE2D9D6", "bytes": "9A 99 19 40" },
-            { "offset": "0x2FC4CA8", "bytes": "9A 99 19 40" }
+            { "search": "00 C7 81 AC 00 00 00 ?? ?? ?? ?? 48 C7 81 B0 00", "expectedMatches": 1, "bytes": "9A 99 19 40" },
+            { "search": "89 79 28 C7 41 2C ?? ?? ?? ?? 48 C7 41 30 FF FF", "expectedMatches": 1, "bytes": "9A 99 19 40" },
+            { "search": "88 01 33 C3 BE E2 3F ?? ?? ?? ?? 0A D7 E3 3F 00", "expectedMatches": 1, "bytes": "9A 99 19 40" }
         ]
       },
       {
@@ -92,9 +92,9 @@
         "operation": "patchBytes",
         "files": ["Retail\\007FirstLight.exe"],
         "patches": [
-            { "offset": "0xDA44B6", "bytes": "39 8E 63 40" },
-            { "offset": "0xE2D9D6", "bytes": "39 8E 63 40" },
-            { "offset": "0x2FC4CA8", "bytes": "39 8E 63 40" }
+            { "search": "00 C7 81 AC 00 00 00 ?? ?? ?? ?? 48 C7 81 B0 00", "expectedMatches": 1, "bytes": "39 8E 63 40" },
+            { "search": "89 79 28 C7 41 2C ?? ?? ?? ?? 48 C7 41 30 FF FF", "expectedMatches": 1, "bytes": "39 8E 63 40" },
+            { "search": "88 01 33 C3 BE E2 3F ?? ?? ?? ?? 0A D7 E3 3F 00", "expectedMatches": 1, "bytes": "39 8E 63 40" }
         ]
       },
 
@@ -109,205 +109,205 @@
         "operation": "delete",
         "source": "RunTime\\chunk1patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "70 (default)", "Camera Distance": "Farther Camera", "!Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\70_farther_default\\Runtime\\chunk0patch204.rpkg",
         "target": "Runtime\\chunk0patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "70 (default)", "Camera Distance": "Farther Camera", "!Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\70_farther_default\\Runtime\\chunk1patch204.rpkg",
         "target": "Runtime\\chunk1patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "70 (default)", "Camera Distance": "Farther Camera", "Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\70_farther_higher\\Runtime\\chunk0patch204.rpkg",
         "target": "Runtime\\chunk0patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "70 (default)", "Camera Distance": "Farther Camera", "Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\70_farther_higher\\Runtime\\chunk1patch204.rpkg",
         "target": "Runtime\\chunk1patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "80", "Camera Distance": "Default", "!Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\80_default_default\\Runtime\\chunk0patch204.rpkg",
         "target": "Runtime\\chunk0patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "80", "Camera Distance": "Default", "!Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\80_default_default\\Runtime\\chunk1patch204.rpkg",
         "target": "Runtime\\chunk1patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "80", "Camera Distance": "Farther Camera", "!Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\80_farther_default\\Runtime\\chunk0patch204.rpkg",
         "target": "Runtime\\chunk0patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "80", "Camera Distance": "Farther Camera", "!Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\80_farther_default\\Runtime\\chunk1patch204.rpkg",
         "target": "Runtime\\chunk1patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "80", "Camera Distance": "Farther Camera", "Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\80_farther_higher\\Runtime\\chunk0patch204.rpkg",
         "target": "Runtime\\chunk0patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "80", "Camera Distance": "Farther Camera", "Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\80_farther_higher\\Runtime\\chunk1patch204.rpkg",
         "target": "Runtime\\chunk1patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "90", "Camera Distance": "Closer Camera", "!Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\90_closer_default\\Runtime\\chunk0patch204.rpkg",
         "target": "Runtime\\chunk0patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "90", "Camera Distance": "Closer Camera", "!Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\90_closer_default\\Runtime\\chunk1patch204.rpkg",
         "target": "Runtime\\chunk1patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "90", "Camera Distance": "Closer Camera", "Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\90_closer_higher\\Runtime\\chunk0patch204.rpkg",
         "target": "Runtime\\chunk0patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "90", "Camera Distance": "Closer Camera", "Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\90_closer_higher\\Runtime\\chunk1patch204.rpkg",
         "target": "Runtime\\chunk1patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "90", "Camera Distance": "Default", "!Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\90_default_default\\Runtime\\chunk0patch204.rpkg",
         "target": "Runtime\\chunk0patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "90", "Camera Distance": "Default", "!Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\90_default_default\\Runtime\\chunk1patch204.rpkg",
         "target": "Runtime\\chunk1patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "90", "Camera Distance": "Farther Camera", "!Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\90_farther_default\\Runtime\\chunk0patch204.rpkg",
         "target": "Runtime\\chunk0patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "90", "Camera Distance": "Farther Camera", "!Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\90_farther_default\\Runtime\\chunk1patch204.rpkg",
         "target": "Runtime\\chunk1patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "90", "Camera Distance": "Farther Camera", "Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\90_farther_higher\\Runtime\\chunk0patch204.rpkg",
         "target": "Runtime\\chunk0patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "90", "Camera Distance": "Farther Camera", "Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\90_farther_higher\\Runtime\\chunk1patch204.rpkg",
         "target": "Runtime\\chunk1patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "100", "Camera Distance": "Closer Camera", "!Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\100_closer_default\\Runtime\\chunk0patch204.rpkg",
         "target": "Runtime\\chunk0patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "100", "Camera Distance": "Closer Camera", "!Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\100_closer_default\\Runtime\\chunk1patch204.rpkg",
         "target": "Runtime\\chunk1patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "100", "Camera Distance": "Closer Camera", "Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\100_closer_higher\\Runtime\\chunk0patch204.rpkg",
         "target": "Runtime\\chunk0patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "100", "Camera Distance": "Closer Camera", "Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\100_closer_higher\\Runtime\\chunk1patch204.rpkg",
         "target": "Runtime\\chunk1patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "110", "Camera Distance": "Closer Camera", "!Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\110_closer_default\\Runtime\\chunk0patch204.rpkg",
         "target": "Runtime\\chunk0patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "110", "Camera Distance": "Closer Camera", "!Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\110_closer_default\\Runtime\\chunk1patch204.rpkg",
         "target": "Runtime\\chunk1patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "110", "Camera Distance": "Closer Camera", "Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\110_closer_higher\\Runtime\\chunk0patch204.rpkg",
         "target": "Runtime\\chunk0patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "110", "Camera Distance": "Closer Camera", "Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\110_closer_higher\\Runtime\\chunk1patch204.rpkg",
         "target": "Runtime\\chunk1patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "110", "Camera Distance": "Default", "!Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\110_default_default\\Runtime\\chunk0patch204.rpkg",
         "target": "Runtime\\chunk0patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "110", "Camera Distance": "Default", "!Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\110_default_default\\Runtime\\chunk1patch204.rpkg",
         "target": "Runtime\\chunk1patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "110", "Camera Distance": "Farther Camera", "!Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\110_farther_default\\Runtime\\chunk0patch204.rpkg",
         "target": "Runtime\\chunk0patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "110", "Camera Distance": "Farther Camera", "!Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\110_farther_default\\Runtime\\chunk1patch204.rpkg",
         "target": "Runtime\\chunk1patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "110", "Camera Distance": "Farther Camera", "Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\110_farther_higher\\Runtime\\chunk0patch204.rpkg",
         "target": "Runtime\\chunk0patch204.rpkg"
       },
-      { 
+      {
         "when": [ { "FOV": "110", "Camera Distance": "Farther Camera", "Misc": "Higher Camera" } ],
         "operation": "copy",
         "source": ".MulderConfig\\HigherFOVAndCamera\\110_farther_higher\\Runtime\\chunk1patch204.rpkg",
@@ -330,7 +330,7 @@
       },
 
 
-    
+
       {
         "when": [ { "Misc": "Skip Intro" } ],
         "operation": "move",
