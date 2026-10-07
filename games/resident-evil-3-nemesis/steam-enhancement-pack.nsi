@@ -16,7 +16,6 @@
     $\r$\n\
     Special thanks to the Classic REbirth team!"
 
-    !include "..\..\includes\tools\7z.nsh"
     !include "..\..\includes\tools\XDelta3.nsh"
     !include "..\..\includes\templates\SelectTemplate.nsh"
 
@@ -46,7 +45,7 @@ SectionEnd
     SectionEnd
 !endif
 
-SectionGroup "RE 3 Classic REbirth v1.0.3 (by Gemini)"
+SectionGroup "Resident Evil 3 Classic REbirth (by Gemini)"
     Section
         SetOutPath "$INSTDIR"
 
@@ -96,12 +95,27 @@ SectionGroup "RE 3 Classic REbirth v1.0.3 (by Gemini)"
         !endif
 
         # Classic REbirth DLL
-        !insertmacro DOWNLOAD_1 "https://cdn.mulderload.eu/games/resident-evil-3-nemesis/impr_misc/re3cr-2026-08-16.zip" \
-                                "re3cr-2026-08-16.zip" \
-                                "e29f11e9efd654d3e6dd45373e2941bc0678dcd7"
+        !insertmacro DOWNLOAD_1 "https://cdn.mulderload.eu/games/resident-evil-3-nemesis/impr_misc/re3cr-2021-08-04.7z" \
+                                "re3cr-2021-08-04.7z" \
+                                "6748b432ff69e923d5bf29fccf3e18c68afb218b"
 
-        !insertmacro NSISUNZ_EXTRACT "re3cr-2026-08-16.zip" ".\" "AUTO_DELETE"
-        AddSize 7834
+        !insertmacro NSIS7Z_EXTRACT "re3cr-2021-08-04.7z" ".\" "AUTO_DELETE"
+        AddSize 4566
+
+        # Clocktower Bug Fix
+        !insertmacro DOWNLOAD_1 "https://cdn.mulderload.eu/games/resident-evil-3-nemesis/fix/Clocktower Bugfix [MLD].7z" \
+                                "Clocktower Bugfix [MLD].7z" \
+                                "6fde3f4086573a8bf264192d147dc4d1db8579d4"
+
+        !insertmacro NSIS7Z_EXTRACT "Clocktower Bugfix [MLD].7z" ".\" "AUTO_DELETE"
+        AddSize 9
+
+        # Clocktower Bug Fix 2
+        !ifdef GOG_ENHANCEMENT_PACK_NSI
+            WriteRegStr HKCU "Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" "$REBIRTHDIR\BH3Launcher.exe" "~ DISABLEDXMAXIMIZEDWINDOWEDMODE"
+        !else
+            WriteRegStr HKCU "Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" "$REBIRTHDIR\BIOHAZARD(R) 3 PC.exe" "~ DISABLEDXMAXIMIZEDWINDOWEDMODE"
+        !endif
 
         # XAudio DLL
         !insertmacro DOWNLOAD_1 "https://cdn.mulderload.eu/tools/xaudio/xaudio2_9.dll" \
